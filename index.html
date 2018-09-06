@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="./fullmodal.css">
+</head>
+<body>
+    <div style="padding:20px;">
+        <h4>ms modal example：模态框进行滚动而非内容滚动</h4>
+        <div>
+            modal框高度：<input type="number" id="txtHeight" value="1000">
+        </div>
+        <br>
+        <a href="javascript:void(0)" onclick="testOpenModal('modalMs')">打开模态框</a>
+        <!-- <h5>ps：根据20180821设计稿进行开发，图标做了改动，因为设计稿的图标在与内容进行重叠时就看不见了，可参考 https://kr-asia.com/</h5> -->
+    </div>
+    <div id="modalMs" style="display: block; overflow: auto;" class="off-fullmodal">
+        <div class="off-fullmodal-frame-ms">
+            <div class="off-fullmodal-ms-content-warp" id="modalContent" style="height: 1000px;">
+                最小宽度1100px，最小高度200px
+            </div>
+            <div class="off-fullmodal-ms-frame-close" onclick="testCloseModal('modalMs')">X</div>
+        </div>
+    </div>
+</body>
+<script src="./jquery.js"></script>
+<script src="./fullModal.js"></script>
+<script>
+    function testOpenModal(id) {
+        var s = ModalHelper.init(id);
+        s.open();
+    }
+
+    function testCloseModal(id) {
+        var s = ModalHelper.init(id);
+        s.close();
+    }
+</script>
+</html>
